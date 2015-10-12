@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WeatherRest.ViewModels;
 
 using Xamarin.Forms;
 
@@ -13,6 +14,8 @@ namespace WeatherRest.Views
 		public MainCarouselPage ()
 		{
 			InitializeComponent ();
-		}
+            var vm = new WeatherContentViewModel();
+            BindingContext = vm;
+        }
 	}
 }

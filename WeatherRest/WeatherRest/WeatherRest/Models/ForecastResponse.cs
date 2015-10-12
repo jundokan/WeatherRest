@@ -4,9 +4,8 @@
     using System.Collections.Generic;
     using System.Text;
 
-    class Forecast
+    class ForecastResponce
     {
-        public double Temperature { get; set; }
-        public int Humidity { get; set; }
+        public List<MainTemp> list { get; set; }
     }
 }

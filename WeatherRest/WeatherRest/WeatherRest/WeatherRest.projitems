@@ -11,8 +11,9 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Forecast.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ForecastResponse.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Main.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Models\Weather.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\MainTemp.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\Networking\IRestClient.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\Networking\RestClient.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\WeatherService\IWeatherService.cs" />

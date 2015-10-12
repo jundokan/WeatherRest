@@ -2,13 +2,40 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WeatherRest.Views.WeatherContentPage">
-  <Frame OutlineColor="Accent">
-    <StackLayout Orientation="Vertical">
-      <BoxView x:Name="boxView" WidthRequest="70" HeightRequest="70" Color="Red" />
-      <StackLayout>
-        <Label x:Name="colorNameLabel" FontSize="Large" VerticalOptions="CenterAndExpand" Text="Red" />
-        <Label x:Name="colorValueLabel" VerticalOptions="CenterAndExpand" />
-      </StackLayout>
-    </StackLayout>
-  </Frame>
+  <Grid Padding="20,20,20,20">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*" />
+      <RowDefinition Height="*" />
+      <RowDefinition Height="*" />
+      <RowDefinition Height="*" />
+      <RowDefinition Height="*" />
+      <RowDefinition Height="*" />
+      <RowDefinition Height="*" />
+      <RowDefinition Height="*" />
+      <RowDefinition Height="4*" />
+    </Grid.RowDefinitions>
+
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="*" />
+      <ColumnDefinition Width="*" />
+      <ColumnDefinition Width="*" />
+    </Grid.ColumnDefinitions>
+
+    <Entry Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Placeholder="Enter city name" Text="{Binding CityName}" VerticalOptions="Center"/>
+    <Button Grid.Row="0" Grid.Column="2" Text="Search" Command="{Binding SearchCommand}" />
+    <Label Grid.Row="1" Grid.Column="0" Text="{Binding CurrentDate}" />
+    <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding Humidity, StringFormat='Humidity: {0}%'}" />
+    <Label Grid.Row="3" Grid.Column="0" Text="{Binding Temperature, StringFormat='{0}°C'}" FontAttributes="Bold" FontSize="40"/>
+    <Label Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" XAlign="Center" Text="3 days forecast"/>
+    <Label Grid.Row="5" Grid.Column="0" Text="{Binding TomorrowDate}"/>
+    <Label Grid.Row="5" Grid.Column="1" Text="{Binding DayAfterTomorrowDate}"/>
+    <Label Grid.Row="5" Grid.Column="2" Text="{Binding DayAfterAfterTomorrowDate}"/>
+    <Label Grid.Row="6" Grid.Column="0" Text="{Binding HumidityTomorrow, StringFormat='{0}%'}"/>
+    <Label Grid.Row="6" Grid.Column="1" Text="{Binding HumidityAfterTomorrow, StringFormat='{0}%'}"/>
+    <Label Grid.Row="6" Grid.Column="2" Text="{Binding HumidityAfterAfterTomorrow, StringFormat='{0}%'}"/>
+    <Label Grid.Row="7" Grid.Column="0" Text="{Binding TemperatureTomorrow, StringFormat='{0}°C'}"/>
+    <Label Grid.Row="7" Grid.Column="1" Text="{Binding TemperatureAfterTomorrow, StringFormat='{0}°C'}"/>
+    <Label Grid.Row="7" Grid.Column="2" Text="{Binding TemperatureAfterAfterTomorrow, StringFormat='{0}°C'}"/>
+
+  </Grid>
 </ContentPage>

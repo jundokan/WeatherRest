@@ -4,9 +4,9 @@
     using System.Collections.Generic;
     using System.Text;
 
-    class Forecast
+    class MainTemp
     {
-        public double Temperature { get; set; }
-        public int Humidity { get; set; }
+        public Main Main { get; set; }
+        public string dt_txt { get; set; }
     }
 }
