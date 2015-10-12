@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>11b69af1-9abf-4e4b-9bf4-1f89e41b0522</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>WeatherRest</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)App.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Forecast.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Main.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Weather.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Networking\IRestClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Networking\RestClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\WeatherService\IWeatherService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\WeatherService\WeatherService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\WeatherContentViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\MainCarouselPage.xaml.cs">
+      <DependentUpon>MainCarouselPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\WeatherContentPage.xaml.cs">
+      <DependentUpon>WeatherContentPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)GettingStarted.Xamarin" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\MainCarouselPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\WeatherContentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>
